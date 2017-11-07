@@ -1,0 +1,404 @@
+<% include ../jointures/head.ejs %>
+<body>
+
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
+<div style="width:1738px; margin-left: 70px;" >
+    <% include ../jointures/header.ejs %>
+</div>
+<link rel="stylesheet" href="../less-css/jeu.css">
+<!--  Debut onglet jeu  -->
+
+<div  class="jeu" style="float:left;">
+<div id="jeu" class="partie_gauche_jeu">
+
+<!--  MAP-->
+<div class="map">
+    <!--  Canvas de la map  -->
+    <canvas id="map_canvas" width="1430" height="700" style="background: url('/static/jeu/images/map.jpg'); position:absolute;">Votre navigateur ne supporte pas correctement le jeu , mettez le à jour. (balise canvas min HTML 5)</canvas>
+
+
+    <!-- provinces -->
+    <svg id="Forgefier" class="provinces_map">
+        <path  d="M0,191.4h11.6l26.1,4.5l29.6-2.3l2.4-2.3h25.7l22.9,8.7H145l1.5-1.9
+				l28.1,0.1l1,0.8l29.4,0.1l-2.5-9.6l-6.1-9.1v-15.7l8.7-7.7l4.9-13.3l-4.8-16.4l-7.7-12.4l-4.2-15.5l6.8-9.7l10-8.8l-2.6-12.1
+				l-5.8-8.4l-6.4-10.3l8.1-10.3c0,0,8.5-14,8.5-15.1s-10.8-12.9-10.8-12.9L190.7,0H0V191.4z"/>
+
+    </svg>
+
+    <svg id="Picdur" class="provinces_map">
+        <path  d="M392.5,201.9l-13.1,9.5l-13.7-0.6l-6,4.9l-41.1,2.3L303,228l-26.4,3
+				l-26.5-0.2L237,220l-4.1-14.7L217,200l-12.8-2l-2.6-9.6l-6.4-9v-15.7l9-7.7l5.1-13.2l-5.1-16.3l-8.1-12.3l-4.4-15.3l7-9.7l10.5-8.7
+				l-2.7-12l-6.1-8.3l-6.7-10.3l8.4-10.3c0,0,8.7-13.9,8.7-15c0-1.1-11.2-12.9-11.2-12.9L189.1,0h358.2l-6.7,16.7l-7,7.9l-15.5,8
+				l-14.8,23.9l-20.3,8l-7.4,13.2l-2.8,19.9l-14.7,7.5l-10.4,15.2l-7,7.5l-4.2,9.4L420,151.1l-3,31.6l-7.7,18.7L392.5,201.9z"/>
+
+    </svg>
+
+    <svg id="Rocheneuve" class="provinces_map">
+        <path  d="M0,190.58l14,3h11.5h16H53h14l13.5-1.5H93l10.5,1.5l9,3l8.5,3.5h12.5H151h12.5l4.5,7v9v15.25v13.25v16.5
+				c0,0,3,8.5,4,11.5s4,14.5,4,14.5l5.5,13v13v12v15.5l-4,14l1,12l3,17l5,14c0,0,5.5,8.5,6,10.5s4,18.5,4,18.5v10.5h-19l-8.5,11l-7,7
+				l-5.5,8.5l-3.5,5.5c0,0-3.5,2-4.5,3.5s-6,3.5-6,3.5H136c0,0-1-0.5-4,0s-6.5,0-6.5,0s-1.5,1.445-3.5,0.223s-5-2.223-7.5-3.223
+				s-4.5-1-6-2.5s-5-5.5-5-5.5s-4-3-5.25-4s-3.75-2.5-3.75-2.5s-7-4.5-8.5-5s-5.5-2-5.5-2s1.5-0.5-4-1s-8-0.5-8-0.5s0-0.5-4.5-0.5
+				s-6.5,0-8.5,0s5,0-2,0s-8-0.5-10,0.5s-2,1-2,1l-2.5,5l-6,2.5l-8,3l-7,3l-8.5,2.5l-6.5-2H0V190.58z"/>
+    </svg>
+
+    <svg id="Castelfer" class="provinces_map">
+        <path  d="M291.375,398.5l-6.5,3l-8,2.5h-9.5h-11.5h-8h-9.5l-8,6.5l-5.5,5.5l-5,6l-6,6l-6,4.5l-11.5,4.5v-13
+				l-2.791-10.545l-3.906-10.637l-4.582-8.897l-3.722-10.421l-1.5-8.5l-1.5-8.5l-1-12l1.906-6.67l2.094-7.33V332v-11.5V300l-5.5-13
+				l-2.634-9.824l-2.389-7.668L167.875,261v-9.5v-7v-13.25V222v-6v-5.5V207l-4.5-7v-2h5.5h6.5h7.5h7l6.5,2.5h5.5h7l8,1l6.5,2l4,2
+				l3.5,4.5l3.5,5l3.5,5.5l3.5,4l5.5,4l8,2.75h8h11h10.5l7-2.25l6.5-0.5l7-1.5l5.5-4l6-2l7-3h8.5h9l7.5-1l8-0.5l5.5-3.5l3-3.5l5,2
+				l7-0.5l6-1.5l5-3l4-2.5l5-1.5l6-1l4-1v5l-6,2.5l-4,3.5l-3.5,3l-5.5,5l-5,4l-5.5,3.5l-5,4.25l-3,5.25l-0.5,4.5l-3,5.5
+				c0,0-1.5,3-3,3.5s-6.5,5-6.5,5l-2.5,3.5l-1.5,5.5l2,5.5l4,6l3.5,5l1.5,5.5l-0.5,6.5l-2,6l-6,5.5l-6,4.5l-7,2l-6,3.5l-8.5,3.5l-7,5.5
+				l-5,3c0,0-4.5,3-4.5,5.5s-3.5,5.5-3.5,5.5s-4.5,1.5-5,3s-4,7.5-4,7.5l-1.5,8l-1,8.5l-0.5,5.5l-1,7.5l-0.5,7l0.5,6.5L291.375,398.5z"/>
+
+    </svg>
+
+    <svg id="Port-sur-suif" class="provinces_map">
+        <path  d="M1078.032,225.885L1068.25,224l-11-2.5l-10.25-2.75l-10.75-3.25l-12.75-2.25h-9c0,0-12-2-13.75-2
+				s-14.5,0-14.5,0l-15.5-1.25L955,207.5c0,0-14.25-2.5-15.75-2.5s-11.25-1.5-14-1.5s-14.75-1.25-14.75-1.25L890.75,199
+				c0,0-12,0.75-12.75,0s-18.75,0-18.75,0l-19.5-0.333l-19-1.667l-16.5-3.25l-14.5-5.25l-8.5-4.75V166l-4-13.5V143v-9.25l2.75-9.25
+				l2.5-8l0.25-8.75L782,100c0,0-2,0.75-1.75-5.75S783.5,87,783.5,87l5-7l7.5-10.5c0.75-16.25,2.5-24.75,2.5-24.75l-2.5-6l-0.25-5.5
+				l1-6.5L801.5,21l2.25-5.25l1.5-5l1.75-4L808,0h132.75l3.5,7.5l5,5.25l5.25,2.5l3.25-0.5c0,0,1.25-2,2.25-2s3.5-2.75,3.5-2.75
+				l0.5-2.5l3,2.5l2.25,4.75l-0.5,4.5c0,0,0.25,3.25-0.5,3.25s-2,0.75-2,0.75s-1-2.25,0,3s1,5.25,1,5.25l-4,1.5l-2.75,2.75l-3.25,1.75
+				L955,38l1.5,3.25l-9.25,5.5l1.5,3.5l-1.5,3.25l1,2.25l3,2.25c0,0,0,0.5,0.25,1.5s0,4,0,5s-1,0.5,0,2.25s0,0.5,1,1.75
+				s1,0.75,2.25,1.5s0,0.75,3,1.25s0.75-0.25,3,0.5S960.5,69.5,963,72.5s-2,0,2.5,3s1.75,1.75,4.5,3s3.5,1.5,4.25,1.75s3,0.75,4.5,0.75
+				s2,0.25,3,0.25s-1.75-0.5,1,0s2.5,0.25,4,0.5s-1,0.25,1.5,0.25s3,0.25,3.75,0.5s2,0,2.75-0.75s0.5-2.5,2.25-0.25
+				s2.25,1.75,2.75,3.75s0,0.25,0.5,2s0.75,3.5,0.75,3.5s-0.5,0,0.75,1.25s0.75,0.5,2.5,3s1.25,1.5,3,3.5s2.25,2.25,2.5,3.5
+				s-1.5,2.5,1,2.5s2.75-0.5,3.25-1.25s0,2.25,0.5-0.75s5-4,8-2.75s4.75,1.25,4.75,1.25l-0.75-3l1-1.25c0,0,1.5-2.5,2.25-3
+				s-0.75-0.25,0.75-0.5s2.25-1.25,3.75-1.25s2.5,0.25,3.5,1.25s1,1.5,1.75,2.5s0.25,0.25,2,1.75s2.75,1.5,4,3.5s1.5,3.75,2.25,4.5
+				s1.5,1,2.25,1.5s-2,1.5,2.25,1.75s2.75-0.5,4.25,0.25s1.75,0.5,4,0.75s3,0,4.5,0.25s2.25,0.25,3.5,0.25s2.5-1.5,2.5-1.5l4,2
+				l3.032,3.5l2.718,2l1.25,3.5l-2,1.25l2,3.75c0,0,3.25,1.5,4,1.5s3,0.5,3,0.5l-2.75,3.25v2.75c0,0,1.5,1.25,2.75,1.5s6,0.5,6,0.5
+				l3.5,0.25v21.75V183l-6.745,14.11l-8.962,18.791L1078.032,225.885z"/>
+    </svg>
+
+    <svg id="Rudeterre" class="provinces_map">
+        <path  d="M778.334,214.333l2-15.5l-0.25-15.25l12.737,6.284l23.444,6.312l22.318,2.32l19.5,0.333h18.75l20,0.125
+				l15.941,3.472l13.545,1.047l15.176,1.796l14.932,2.472l17.459,2.436l17.947,0.903l19,0.75l18.583,2.5l16.417,4.25l16.885,4.258
+				l14.147,2.877l-3.032,5.615v12v5v4l-3,4l-1.174,3.758l-1.326,4.242v20.5v83.5l-17,54l-5.5,6l-6,2l-3.5,1h-6h-6.5h-7h-7h-5.5h-5.5
+				h-4.5l-1,5h-4.5h-8.5l-4.5,5.025l-7,6.975l-2,6.5l-4,9.5c0,0-2.5,5.5-4,6.5s-12,7.5-12,7.5l-14.5,6l-13.5,5l-19,3l-19.5-3l-16-7.5
+				l-15-10l-16-7.5l-18-7h-15h-12.5l-20.5,5l-14.5,1l-14-1l4-9.5l4.5-11.475l5-9.525l6-11.5l8-12l9.75-10l4.75-12.5l6.5-12l8.5-13
+				l8-14.5l7.5-14.5l3-19l1-20l-2-14.5l-6.5-9l-8-9l-10-10.5l-7.5-9l-2-10L778.334,214.333z"/>
+    </svg>
+
+    <svg id="Richepuy" class="provinces_map">
+        <path  d="M680.109,0l-5.333,13.332v6.667v12l2.667,5.333v9.333l-2.667,6l-2.831,12.085V76v18.75v21l-3,22.75
+				l-5.5,16.25l-2.5,12.25l-2.25,15.25v10.5v10.75v8.5h-2.25l-5,2.5l-5.75,3.25l-5,4.25l-5.5,3l-4.5,1.5l-5,1.25l-4.75,3h-14.25
+				l-6.25-2.25l-4-3.5l-6-2.25l-7.5-3l-5.75-1.75l-4-2l-2.75-2.75l-2.5-3.75V204l-1.25-4.5V192l-2.5-4.5l-3.5-5l-3.5-4l-4.25-3.75
+				l-4.75-2.75l-3.75-2.25l-4.75-2l-6.75-1.75l-8-1.75c0,0-8.25-2-9-2.25s-5-2-6.5-2.5s-6-2.5-6-2.5s-4.25-2-5-2.5
+				s-4.25-2.75-4.25-2.75l-5-3.5c0,0-4.25-2.75-5.75-3s-9-3.5-9-3.5l-8.25-3.5l-7.25-1.75l-8.75,0.25l-10,0.75l-1.25-1.25v-3v-2.75
+				c0,0,1.25-1.5,1.75-2.25s0.75-1.25,1.5-2.25s-1,0.5,0.75-1s-0.5,0.25,1.75-1.5s1.75-1.75,3.5-3s-0.25,0.5,1.75-1.25s0.25,1,2-1.75
+				s1-1.25,1.75-2.75s1.5-2.25,2-3s0.5-0.25,1.5-2s1.25-1.75,2.75-3.5s0.25-1.25,1.5-1.75s2.5-0.5,4-1.25s2.25-1,3.25-1.5
+				s1.75-0.5,2.25-1.25s2.75-4.5,2.75-4.5c0-1.25-1-4.25-1-4.25s-0.25-1.25,0-2.5s0.25-2,0.25-3.5s0-2,0-3.25s-0.5-1.25,0-3
+				s0.25-1.5,0.75-3s0.5-1.5,0.5-1.5s0-1.5,0.75-1.75s-0.613,1.413,0.75-0.25c0.968-1.181,1-3.25,2-4.25s1.75-0.25,2.5-0.75
+				s-1.5-1.25,1.25-3s0.296,0.76,3.046-0.74c3.263-1.78-0.44-0.77,3.263-1.78c2.75-0.75,3.94-0.48,5.19-0.73s-0.75,0.5,1.25-0.25
+				s2.25-1,4-1.5s-0.75,1,1.75-0.5s0.5,0,2.5-1.5s2.25-1.5,3-2.75s0.5-1.25,1.75-2.75s-0.5,1,1.25-1.5s0.25-0.25,1.75-2.5
+				s-0.75,0,1.5-2.25s0,0.5,2.25-2.25s0.75-1,2.25-2.75s-0.25,0,1.5-1.75s1.5-2,2.5-3s-0.5,0.5,1-1s1.75-1.25,3-2.5s-2,1.75,1.25-1.25
+				s2-2,3.25-3s-0.75,0.75,1.25-1s0-0.25,2-1.75s0,0.25,2-1.5s0.25-0.5,2-1.75s0.5,0.5,1.75-1.25s0.25-0.25,1.25-1.75s-0.5,0.75,1-1.5
+				s1.5-2.25,1.5-2.25s0.75-0.5,1.5-1.75s0,0,0.75-1.25s-0.5,1,0.75-1.25s1.25-2.25,1.25-2.25s0.75-1.75,0.75-3s-0.25,0.25,0-1.25
+				s0.25-1.5,0.25-1.5l0.25-1.25l0.75-2.5H680.109z"/>
+    </svg>
+
+    <svg id="Rivesainte" class="provinces_map">
+        <path  d="M836.75,553c0,0,0-8.625,0-11.5s0-11,0-11l-3-13l-2.5-10v-10l5.5-10.5l4-8.5l6.5-6.5l20.252,12.462
+				l10.748,5.038l12.925,1.988l14.591-0.254l16.749-3.869l11.577-4.455l12.688-5.668l11.26-7.728L964.75,455l7.511-11.989l7.989-6.511
+				h9l2,5.026V448v2l5-1l2.5,0.5v3l3.5,5v2.5l3,4l3.5,3l3-1.5h2.5h6l4.5-1l5-2l7.5,2l8.5,2l8,4l5,2l2.5,1.5v3.5l6.5,1l4,4l3.032,3.5
+				l4.468,3.5h7.5l7,3l7,4.5l5,3.5l4.5,2l6,2.5l3,2v4.5v6.5l6.5,2.5v7.5l2.8,4.9l2.7,8.6l2.5,7l1.5,4l-17,0.5l-9,3l-6.5,4.5h-7.5h-9
+				l-4.5,5l-4,5.264l-6,4.236h-6.5h-9.5h-7h-6.5l-8,6v7l5,3.5h5.5l0.5,5l-7.5,2.5h-8l-4.5,4.5l-4.5,7l-5,7l-6.5,7l-8,7l-4.5,6l1,6
+				l1.5,5l1.5,4.5h-8.5l-9,5.5v6c0,0-8,5-8,6.5s-5,8-5,8l-6,4l-11,4h-7.5l-4.5-4l-4-6l-5-4.5l-3.5-3.5l4-4.5l4.5-5.5l5,4l5.5,1l3.5-7
+				l0.5-5l-4.5-3.5l-5-3l-4-1l-2-3l-3.5-1.5l-5.5-2.5l-6.5,0.5l-5,4.5l-2,3l-7.984-1.5l-5.516-4.5l-6-4.5l-6-4l-7-3l-4-3l5-1.5l6.5-3.5
+				l3-3.5l-3-6l-2-3l4.5-1.5l4-5.5l-0.5-5l-3-3.5l-3.5-1.5h-4.5l-6,2l-5.5,3l-8.5,0.5l-5-2l-7-2l-5.5-1.5c0,0-0.5-4-2.5-4s-7.5,0-7.5,0
+				l2-5l2.5-5.5l1-5.236l3-2.764l1-4l-3-6L836.75,553z"/>
+    </svg>
+
+    <svg id="Forgeroyal" class="provinces_map">
+        <path  d="M549.511,700h386.5v-4.5h4l4-3.5l2.5-5l-4.665-2.813l-3.181-3.955L936.511,677l-6.166-5.667L928.011,669h-4.333
+				h-9.667h-8l-1.333-3.666l1.666-3.333l-0.333-3.667l1-3h2.667v-4.333l2.666-3l0.667-2.501l-7.984-1.5l-8.688-6.88l-6.942-4.863
+				l-6.571-3.266L876.511,625h-4.167l-8,3.334c0,0-5.333-0.999-6.333-1.333s-8.333-4-8.333-4l-6.334-4.667l-3-5.667l0.334-5.666
+				l2.666-4.334l2.667-3.333h-5.667l-0.333-5l-2.667-2l-1.833-5.834l2-5l-2.833-3.499l-1.667-5l-0.667-3.667l-1.833-3.333l-2.5-4.251
+				l2.5-4.749l3.833-3l1.667-1.001v-20.333l-1.836-10.121l-2.322-9.679l-1.342-11.206l2.619-9.161l2.881-5.5l4-8.5l3.92-3.92l2.58-2.58
+				l-10.934-5.125l-14.101-5.889l-8.966-3.486h-27.5l-20.5,5l-11.571,0.798l-11.563-0.415l-5.365-0.383l-4,8.494l-1,7.667l-2.333,6.666
+				l-3.334,4l-5.333,3.173l-3.333,2.494l-2.334,8.667l-3.333,6l-2.666,7.333l-3.334,4.333l-5.666,5.667c0,0-3.334,3.333-3.668,4.333
+				c-0.332,1-2.666,7.667-2.666,7.667s-2,6-2.666,7c-0.668,1-4.334,12.006-4.334,12.006l-4.5,3.75l-6,9.014l-10.5,7.986l-8,8.75l-9,5
+				l-11,6l-9.5,2.5l-10-2.5l-11-3.5l-11-0.5l-9.5,0.5l-11,3l-6,4.5l-9.5,3.5l-7-0.5l0.5,7.5l-3.5,9.5l-2.5,8v9.5l-3,13v6v8l3,2.5
+				l0.5,9.5l1.5,8L549.511,700z"/>
+    </svg>
+
+    <svg id="Chateauecume" class="provinces_map">
+        <path  d="M1430,700V444.5l-3.081-2.974l-9.396,1.604l-21.103,3.188l-23.817,0.477L1352.5,445.5l-23.117,1.302l-25.021,3.63l-15.327,3.015l-18.024-0.392l-21.51-1.555H1230l-19.089,2.99l-19.333,2.615L1174.5,457.5h-13h-7l-8.327-2.563l-4.673-1.438v4v6v4.5
+				l-4,2.5l4.5,1.5l2.5-1.5l2.5-2.5l-1-3.5l2-3.5l3,1l0.5,5l0.5,4l-5,3l-3.5,2l-3.5,1.5l3.5,3.5l4,3.5l3.5,1.5l4.5,1v3l-0.5,2.5l-2,3.5
+				l-3.5,2.5l-4,0.5l-4.5,1l-3.5-0.5v5.5v4l3.5,1.5l4,0.5l-0.5,3l-4.5,2.5l-2.5,1.5l-4.5,2l-4,0.5v7.5l4,7l1.5,6.5l2.5,7l1.5,4l6.5,0.5
+				h4.5h6l8,0.5l8.5,0.5l8.5,1l7,0.5l6.5,3.5l3,3l1,5l-1.5,3.764l-5.5,3.736l2,3.5l2,3l1,5.5l-1,2.5v4.5l3.5,3l4.5,1.5l5,2.5l6,2.5l5,3
+				l-1.5,3l-3,3l-3,3l3,2.5l2.5,1l3.5,1.5l3.5,2l5.5,1.5l4.25-1.5v-4h4.25h3l4,3.5l-1.5,3l-0.5,3l4.5,2l3,1.5l3,3.5l1,4.5l1,3.5l2.5,2
+				l7,4c0,0,2.5,0,3,1.5s0.5,2.5,2.5,4.5s-1-0.5,2,2s0.5-1,3,2.5s2,5,4,5.5s2,0.5,2,0.5l4,3.5c2.5,2.5,2-1,2.5,2.5s1.5,0,0.5,3.5
+				s-1,3.5-1,3.5s-2,2-3.5,3s-1.5,1-1.5,1s-4.5-3-3,2s1.5,5,1.5,5s0.5,3.5-1.5,3.5s2-2-2,0s-1,0-4,2s-4,0.5-5.5,3s-3.5,2.5-3.5,2.5
+				H1430z"/>
+    </svg>
+
+    <svg id="Rocheroyale" class="provinces_map">
+        <path  d="M0,700h303.5l-4.5-15.5l-5.5-9.5l-16-8.5L277,657l2.5-11.5
+				c0,0-4.5-8.5-9-9s-22.5-6-22.5-6l-20.5-2.5c0,0-12.5-9-14-11.5s-6-15-6-17s1.5-21,1.5-21l6-10l0.5-22L206,518l7-21
+				c0,0,12.5-12.5,14.5-13.5S236,468,238,466s-0.5-21-0.5-21l-6-15.5l-5.5-11l-1.5-4L214,428l-5.5,4l-12.5,5.5h-18L162.5,454
+				l-10.8,15.5l-6.3,4L125,476l-7-3.5l-9-5.5l-13.5-10L78,449.5l-36,1l-4.5,4.5L18,464.5L0,464V700z"/>
+    </svg>
+
+    <svg id="Moulincalme" class="provinces_map">
+        <path  d="M553.8,700h-250l-4.5-15.5l-5.5-9.5l-16-8.5l-0.5-9.5l2.5-11.5
+				c0,0-4.5-8.5-9-9s-22.5-6-22.5-6l-20.5-2.5c0,0-12.5-9-14-11.5s-6-15-6-17s1.5-21,1.5-21l6-10l0.5-22l-9.5-28.5l7-21
+				c0,0,12.5-12.5,14.5-13.5s8.5-15.5,10.5-17.5s-0.5-21-0.5-21l-6-15.5l-5.5-11l-1.5-4l11.5-8.5h19.5l36-7l36.5,26l8.5,4h31.5l24.5,14
+				l12.5,28.5v11l13.5,12l12.5,5.5l12.5-0.5l17,12.5l23,14.5l46,16l16.5,12.5l9.5,14v50.5l-5,29.5l0.2,26.2L553.8,700z"/>
+    </svg>
+
+    <svg id="Mortebutte" class="provinces_map">
+        <path  d="M402.1,461l-8.4-17.5l-22.4-13l-38.8-3l-40.7-29.6l8-53.1l6.5-10h7
+				l3.5-12l40.7-19.5l6.5-14.5l0.5-4.5l-10.9-20.6l2-10l12.4-10.5l4-12l37.3-31.1l8-21.6l3.5-23.6l17.4-18.5h27.3l5,4.5l6.5,0.5
+                l38.3,18.5l42.7,18.5l12.4,18l12.4,21.6l8.4,5l9.9,7l-9.4,27.1l6,17.5c0,0-0.5,17.5-3,19c-2.5,1.5-26.8,18.5-26.8,18.5l-28.8,8
+	            l-20.1,8.6l-17.9,22.6l-7.7,27.5l-12.9,23.1l-14.9,22.6l-23.6,4.6L426.9,446L402.1,461z"/>
+    </svg>
+
+    <svg id="Ocrechamps" class="provinces_map">
+        <path  d="M403.2,459.7l2.5,14.8l8,15.7l13,9h20.5l21.5,17.5l52.5,21.5
+	            l27.5,17.5l9,32.5l-6.2,49.1l33.3-24.4l46.1-12.1l35.3-16.1l24.6-32.3l9.4-22.2l16-17.5l6.5-18l10.5-8.5l7.1-24.8l15.9-30.7l-40-8
+	            l-26,2l-29.5-15L637.2,382l-5.5-32.8l-17-18.5l0.5-35l11-44l-4-21.5l-19-1l-9.5,27l6,17.5c0,0-0.5,17.5-3,19s-27,18.5-27,18.5l-29,8
+	            l-23,12l-18,22.5l-5,24l-13,23l-15,22.5l-23.7,4.6l-14.8,16.9L403.2,459.7z"/>
+    </svg>
+
+    <svg id="Castelnoir" class="provinces_map">
+        <path  d="M818.2,288.7v21.8l-6.5,23.3l-8.2,14.9l-11.8,22.8l-10.3,15.9
+	            l-2.5,7.9l-8.5,10.4l-8,10.9l-6.5,12.9l-39.3-6l-26.4,0L661,408.8l-23.4-27.5l-5.5-32.5l-16.9-18.4l0.5-34.7l10.9-43.7l-4-21.3
+	            l28.8-15.9l17.9-8.4l22.4-5.5c0,0,29.3-26.8,26.9-25.3c-2.5,1.5,11.4-4,11.4-4l25.9-3.5l10.4-4.5l10.4-15.9l4.5,14.4v30.3v46.6
+	            l22.4,23.3l11.9,17.4L818.2,288.7z"/>
+    </svg>
+
+    <svg  id="Fondroche" class="provinces_map">
+        <path  d="M724.416,0h83.25l-1.447,7.773L801.166,21l-5.068,7.816l-0.613,5.908l0.092,2.019l0.09,2.007l1.176,2.822
+				l0.682,1.633l0.643,1.544l-0.615,3.697l-0.416,3.08l-0.377,3.285l-0.531,5.733c0,0-0.178,2.263-0.27,3.74s-0.217,3.719-0.217,3.719
+				l-1.965,4.145l-1.74,2.436l-2.332,3.264L788.166,80l-2.5,3.5l-2.5,3.5l-2.043,1.976l-0.902,2.591l-0.305,2.683l0.105,3.237
+				l1.645,2.513l0.17,1.758l0.244,2.524l0.336,3.468l-0.186,6.509l-1.033,5.344l-1.18,3.772l-1.436,4.775l-1.236,4.153l-0.43,3.446
+				c0,0,0,2.75,0,3.5s0,3.75,0,3.75v4.25l-2.5,3.25l-2,4.5l-2.25,3.5l-2,2.75l-2.125,2.25l-5.125,2.5l-4.25,1.5l-5.25,2.25h-7.5h-7h-7
+				l-4,2.75l-6.75,2.75l-5.75,3.25l-5.5,5l-4.25,3.5l-5.5,4.75l-5.5,4.25l-2.75,4l-6,2.5l-4.123,1.75h-4.127l-4.5,1.75h-4.5l-4,2
+				l-3.25,1.75L658.38,212v-6v-9.75v-9.75l1.255-12.755l1.486-9.152l2.009-9.843l2.787-8.25l2.25-6.25l1.814-11.992l1.648-12.508V106
+				v-9.75V86V73.25v-8.5l1.4-5.974L673.915,55l1.322-4.08l1.891-4.255V42.75v-5.418l-1.425-2.85L674.461,31v-6.5v-4.501V15.25
+				l1.436-5.508l1.586-3.965l1.466-3.664L679.793,0H724.416z"/>
+    </svg>
+
+    <svg id="Bourgours" class="provinces_map">
+        <path  d="M1430,441V208.5l-15.09-2.447l-14.384-3.166L1383,199l-10.622,8.906l-9.915,10.02l-9.612,10.436l-12.335,8.168
+				l-10.699,5.168l-11.73-0.153l-12.414-2.415l-21.172-0.63l-12.301,0.998l-31.014,7.757L1224,251.5l-13.338-1.565l-20.365-3.436
+				l-24.479,1.354L1136,253.5l-27.5,3l-22-3.5h-7l-4.5-4.5v4l-3,4l-2.5,8V278v90.5L1057,408l-4.5,14.5l-2.5,4l-3,2l-3,1l-3,1l-3.5,1
+				l6,1l4,2.5l5,0.5l3,0.5l5.5,5h7.5h9h8.5l4,3.5h3.5l3.5-3l5,3h4l1,2.5l4,2.5l3,4h7h8h7h5.5l13,4h13h21l19.5-2.5l20-3.5h21.5l19,1.5
+				l23,0.5c0,0,17-4,18.5-4.5s22.5-2.5,22.5-2.5l20-1c0,0,22.5,1.5,24,1.5s16.5-0.5,18-0.5s15-2,15-2L1430,441z"/>
+    </svg>
+
+    <svg id="Eaumorte" class="provinces_map">
+        <path  d="M1391.5,0l4,4.5V7l5,3h4h3v4.5V17v2h-5h-3v-2.5l-3.5-1l3.5,5.5l-3.5,3h-4.5l-2.5-2.5l-3-1.5l-2.5-2h-3.5l-3-0.5
+				l-2.5-1.5v-1.5l-2-2.5V9l-3.5-1.5l-3,1.5v3v3v2.5l-3.5,1l-3,5.5v5l3,2.5l1.5,4.5h3l2.5-2.5l4-1.5l4-1l3,5h3l5,7l-1,4.5h-4l-3.5-3
+				l-3-1.5l-3,1l-2.5,3.5h-2v5l-2,5.5l-2,3.5l-6,3h-5.5h-5h-3v-4l-2.5-0.5l-3.5,2l-3.5,2.5h-4v-3l-5-1.5l-2.5-0.5v-3l-3-3v-3V48l-3-0.5
+				l-2.5-1.5v-3.5v-4V36l-2.5-1l-2.5-2.75h-2.5h-3l-3-3.25v-1.5v-3v-2l3,3l2.5,1l1.5-2.5v-3l-0.5-3l2-3l-3.5-1.5l-3.301-0.99L1303,12
+				V8.5v-2v-3c0,0-3.5-3.5-3.5,0s0,6.5,0,6.5v4c0,0-1-3-2.5-2s-1.5,1-1.5,1s1.5,1.5,0,4s-1.5-0.5-1.5,2.5s0,3,0,3s1.5,5,0,7
+				s-1.5,2-1.5,2s-0.5-3-2,0.75S1289,36,1289,36s-1,1-3,2.5s-2,1.5-2,1.5s-0.5,1-4,2s-1,1-3.5,1s2.5,0,2.5,0s-3.9-5-3.2-2.5
+				s-3.3,1-3.3,1s4,1,0,1.5s-7,1.5-7,1.5h-4h-4.5l-2.5,0.5l-3,2.5l-2.5,4v5l2.5,0.5l0.5,3l-3,1v2l-4,1.5l-3,3l-5,4.5l-4,2.5h-4h-3.5v6
+				l-4,4.5l-5,3l-6.5,4h-5l-5,4.5h-5.5L1189,93l-4,3.5h-6.5L1172,99h-2.5v3.5v3h5.5l2.5,3h4l2,3l-1.5,3l-0.5,4h-3l-3,3h-3l-0.5-4.5
+				l-2.5-2v-2l-3-0.5l-2.5-0.5v3v2c0,0,3,5,0,4.5s-6,0.035-6,0.035s0-0.965-2,0s-7-0.965-4.5,0s-7,0.278-7,0.278l-4,0.237V128h4
+				l2.5,3.5h6h3.5v6h-3.5h-3.5h-5.5h-3.5h-3v4l-2.5,4h-2.5h-6.5l-5.5-3.5l-7.5-1h-3l-4-2l-3.5-2.5l-4-1.5v48l-5.5,11.5l-15.5,32.5
+				l-2.5,4.5V246l4.5,7h7l14.5,3.5h17.5l17.5-3l15-4l27-3c0,0,18-0.5,21,1s22,4,25,4s20-5.5,23.5-5.5s28-7.5,28-7.5h27
+				c0,0,22.5,4.5,24,4.5s23-11,23-11l17.5-19c0,0,14.5-14,16-14s28.5,6.5,28.5,6.5l18.5,3V0H1391.5z"/>
+
+    </svg>
+
+
+    <li id="Player_IA1" class="joueurs_map" style="margin-left:100px; margin-top:100px;" >
+        <div class="pseudo_players">  Joueur 1 </div>
+        <div class="barre_hp_fond"><div class="barre_hp"></div></div>
+        <img src="/static/jeu/images/player1.png">
+    </li>
+    <li id="Player_IA2" class="joueurs_map" style="margin-left:650px; margin-top:100px;">
+        <div class="pseudo_players">  Joueur 2 </div>
+        <div class="barre_hp_fond"><div class="barre_hp"></div></div>
+        <img src="/static/jeu/images/player2.png">
+    </li>
+    <li id="Player_IA3" class="joueurs_map" style="margin-left:100px; margin-top:310px;">
+        <div class="pseudo_players">  Joueur 3 </div>
+        <div class="barre_hp_fond"><div id="Player_IA3_hp" class="barre_hp"></div></div>
+        <img src="/static/jeu/images/player3.png">
+    </li>
+    <li id="Player_IA4" class="joueurs_map" style="margin-left:650px; margin-top:310px;">
+        <div class="pseudo_players">  Joueur 4 </div>
+        <div class="barre_hp_fond"><div id="Player_IA4_hp"  class="barre_hp"></div></div>
+        <img src="/static/jeu/images/player4.png">
+    </li>
+    <div id="arene" class="arene">
+        <div style="margin-top: 30px;" class="joueur_versus">Joueur X</div>
+        <div style="margin-top: 280px;float: right;" class="joueur_versus">Joueur X</div>
+    </div>
+</div>
+
+<!--  Tableau des scores  -->
+<div id ="scores" class="scores">
+
+    <div class="titre_scores">
+        Tableaux des scores
+    </div>
+
+    <div class="player_scores">
+        <div class="player_score_block" style="margin-left:45px;">
+            <div class="player_scores_titre">
+                Joueur 1
+            </div>
+            <div class="players_scores_sous_partie">
+                <table style="margin-left:20px;" class="nombre_chrono">
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/bois.png"><span id="Player_IA1_bois">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/fer.png"><span id="Player_IA1_fer">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/pierre.png"><span id="Player_IA1_pierre">0</span></div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/or.png"><span id="Player_IA1_or">0</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="player_score_block">
+            <div class="player_scores_titre">
+                Joueur 2
+            </div>
+            <div class="players_scores_sous_partie">
+                <table style="margin-left:20px;" class="nombre_chrono">
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/bois.png"><span id="Player_IA2_bois">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/fer.png"><span id="Player_IA2_fer">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/pierre.png"><span id="Player_IA2_pierre">0</span></div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/or.png"><span id="Player_IA2_or">0</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="player_score_block">
+            <div class="player_scores_titre">
+                Joueur 3
+            </div>
+            <div class="players_scores_sous_partie">
+                <table style="margin-left:20px;" class="nombre_chrono">
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/bois.png"><span id="Player_IA3_bois">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/fer.png"><span id="Player_IA3_fer">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/pierre.png"><span id="Player_IA3_pierre">0</span></div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/or.png"><span id="Player_IA3_or">0</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="player_score_block">
+            <div class="player_scores_titre">
+                Joueur 4
+            </div>
+            <div class="players_scores_sous_partie">
+                <table style="margin-left:20px;" class="nombre_chrono">
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/bois.png"><span id="Player_IA4_bois">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/fer.png"><span id="Player_IA4_fer">0</span></div>
+                        </td>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/pierre.png"><span id="Player_IA4_pierre">0</span></div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="items_scoreboard"><img width="30" height="30" style="margin-bottom:-7px; margin-top:10px;" src="/static/jeu/images/or.png"><span id="Player_IA4_or">0</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--  Fin tableau des scores  -->
+
+
+</div>
+
+<div class="partie_droite_jeu">
+    <!--  Chrono  -->
+    <div id ="partie_nb_tours_chrono" class="partie_nb_tours_chrono">
+        <div class="partie_nb_tours">
+            <div class="nb_tours_partie_gauche">
+                Tour
+            </div>
+            <div id="nb_tours" class="nb_tours_partie_droite">
+                Aucuns
+            </div>
+        </div>
+
+        <div id="chrono_mn_sec_dix" class="partie_chrono nombre_chrono">
+            <span id= "chrono_sec"> 0 </span> sec
+            <span id= "chrono_dix"> 0</span> dixièmes
+        </div>
+
+    </div>
+
+    <!--  Console  -->
+    <div class="partie_console">
+        <div class="titre_console">
+            Console
+        </div>
+        <div id="logs" class="sous_partie_console">
+
+
+            <div id="log" style="display:none;" class="logs"></div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<div style="margin-left:820px; padding: 5px 5px 5px 5px; height:10px;"><p>© Développer par <a href="" style="color:orange;"><b>Timothée, Quentin, Sebastien</a> </p></div>
+
+
+
+
+<!--  Executions des fichiers JS  -->
+<script type="text/javascript" src="/static/jeu/configurations/configuration.js"></script>
+<script type="text/javascript" src="/static/jeu/configurations/fonctions.js"></script>
+<script type="text/javascript" src="/static/jeu/jeux.js"></script>
+</html>

@@ -1,0 +1,276 @@
+@font-face {
+    font-family: "digital";
+    src: url("DS-DIGI.TTF");
+}
+
+
+html
+{
+    color: #7F7F7F;
+    font-family: Raleway;
+    font-size: 17px;
+    display: block;
+    float: left;
+    text-shadow: 0px 1px 0px #FFF;
+    outline: medium none;
+
+}
+
+body
+{
+ width: 1800px;
+}
+a:link{text-decoration:none;}
+li {list-style-type: none;}
+.jeu
+{
+    margin-left:70px;
+    width:1700px;
+    height: 885px;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+    border: 2px solid #E3E3E3;
+}
+.partie_gauche_jeu
+{
+    width:1430px;
+    height:885px;
+    float:left;
+    position:relative
+}
+.partie_droite_jeu
+{
+    width:250px;
+    height:885px;
+    float:right;
+    position:relative;
+}
+.partie_nb_tours_chrono
+{
+    height:90px;
+    background: none repeat scroll 0% 0% #3798B2;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    font-size:26px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+.partie_nb_tours
+{
+    position:absolute;
+    top:0;
+    width:100%;
+    height: auto;
+    border-bottom: thin solid #F8F8FF;
+}
+.partie_chrono
+{
+    position: absolute;
+    font-size: 23px;
+    padding: 10px;
+    bottom: 0;
+    margin-left : 27px;
+}
+.nb_tours_partie_gauche
+{
+    float:left;
+    padding: 5px 5px 5px 5px;
+    margin-left:13px;
+    margin-right:15px;
+    border-right: thin solid #F8F8FF;
+    display:block;
+    width:85px;
+}
+.nb_tours_partie_droite
+{
+    float:right;
+    padding: 4px 5px 5px 5px;
+    margin-right:20px;
+}
+.partie_console
+{
+
+    display:block;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:785px;
+    background: none repeat scroll 0% 0% #3798B2;
+    color: #FFF;
+    text-align: center;
+    font-size:25px;
+    margin-top :6px;
+}
+.titre_console
+{
+    border-bottom: thin solid ghostwhite;
+}
+.logs
+{
+    width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow:  -1px 0px 4px 0px rgba(255, 0, 0, 0.7);
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    transition : width 2s ease-in-out 0s;
+}
+
+.sous_partie_console{
+    position:absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height:754px;
+}
+.scores
+{
+    position:absolute;
+    bottom:0;
+    height: 185px;
+    width:100%;
+    margin:auto;
+    display:block;
+    background: none repeat scroll 0% 0% #3798B2;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    font-size:26px;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E3E3E3;
+}
+.titre_scores
+{
+    border-bottom: thin solid ghostwhite;
+    border-right: thin solid ghostwhite;
+
+}
+.players_scores
+{
+    width:925px;
+}
+.player_scores_titre
+{
+    top:0px;
+    height:24px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: thin solid ghostwhite;
+}
+.players_scores_sous_partie
+{
+    position:absolute;
+}
+.player_score_block
+{
+    background-color: orangered;
+    width:300px;
+    height:130px;
+    float: left;
+    margin: 10px 37px 5px 5px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+    border: 2px solid #E3E3E3;
+
+}
+.items_scoreboard
+{
+    width:80px;
+    font-size: 23px;
+    display:inline-block;
+    line-height:1.3em;
+}
+.map
+{
+    width:100%;
+    height :480px;
+    position: absolute;
+
+}
+.joueurs_map
+ {
+     position: absolute;
+     width:80px;
+ }
+.provinces_map
+{
+    position: absolute;
+    opacity:4;
+    width:1430px;
+    height:700px;
+    color: transparent;
+}
+.nombre_chrono
+{
+
+    font-family: arial;
+    color: #FFF;
+    text-shadow: 0px 0px 5px #FFF;
+}
+.onglet_dev
+{
+    float: right;
+}
+
+svg {
+    fill: currentcolor;
+}
+.barre_hp_fond
+{
+
+    background-color: #400100;
+    font-family: inherit;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #400100;
+    width: 100%;
+    height:20px;
+    box-sizing: border-box;
+}
+
+.barre_hp
+{
+    background-color: #ff1102;
+    height:18px;
+    width: 100%;
+}
+.arene
+{
+    background-image: url("./images/versus.png");
+    margin-left: 20%;
+    margin-top: -70%;
+    width: 60%;
+    height: 90%;
+    position : absolute;
+    display: block;
+    transition: margin-top 2s;
+    -moz-box-shadow: 0px 0px 200px 50px #9aff99;
+    -webkit-box-shadow: 0px 0px 200px 50px #9aff99;
+    -o-box-shadow: 0px 0px 200px 50px #9aff99;
+    box-shadow: 0px 0px 200px 50px #9aff99;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#9aff99, Direction=NaN, Strength=200);
+}
+
+.arene_after
+{
+    margin-top: 10%;
+    transition: margin-top 2s;
+}
+
+.joueur_versus
+{
+    font-size: 90px;
+    padding: 10px 10px 10px 10px;
+    font-family: arial;
+    color: #FFF;
+    text-shadow: 0px 0px 5px #FFF;
+}

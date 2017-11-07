@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'minecraft';
+    src: url('minecraft.woff');    
+    font-style: normal;
+}
+html{ 
+    background: url("images/fond.jpg") fixed no-repeat;
+    font: 1.1em sans-serif;
+    text-align: justify;
+}
+
+header
+{      
+    margin-left: auto;
+    margin-right: auto;	
+	width: 960px;	
+	height: 160px;	
+	background: url("images/banniere.jpg") ;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 0px;
+}
+
+
+nav
+{    
+    margin-top: 20px;	
+    margin-top: 40px;	
+    margin-left: auto;
+    margin-right: auto;
+	height: 40px;
+	width: 960px;			
+}
+/* Corp de la page debut*/
+div#corp
+{    
+    margin-top: 40px;	
+    margin-left: auto;
+    margin-right: auto;
+    height:700px;	
+	width: 960px;		
+}
+
+article
+{    
+    float: left;	
+	height: 366px;
+	width: 670px;	
+	background: url("images/metal.jpg") ;	
+	font-size: 40px;
+}
+
+aside
+{    	
+	float: right;    
+	height: 600px;
+	width: 270px;  
+    
+}
+
+
+/* Corp de la page Fin*/
+footer
+{
+    list-style-type: none;
+    margin-top: 5px;	
+    margin-left: auto;
+    margin-right: auto;
+	height: 30px;
+	width: 960px;	
+	background-color: black;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 0px;
+}
+ol, ul {
+    list-style: none outside none;
+}

@@ -1,0 +1,49 @@
+<% include ../jointures/head.ejs %>
+
+<body>
+
+<div class="container">
+    <!-- include de la barre de navigation-->
+    <% include ../jointures/header.ejs %>
+
+    <!-- Debut sur corp principale-->
+    <div class="box-shadow well">
+        <div class="row-fluid">
+            <div class="intro_outro">
+            Fiches de synthèses :<br><br>
+
+                <div class="sous_partie_menu" ><a onclick="select_synthese('Timothee')" style="cursor: pointer;">Oliger Timothée</a></div>
+                <div class="sous_partie_menu" ><a onclick="select_synthese('Sebastien')" style="cursor: pointer;">Philipp Sebastien</a></div>
+                <div class="sous_partie_menu" ><a onclick="select_synthese('Quentin')" style="cursor: pointer;">Philipp Quentin</a></div>
+            </div>
+
+
+
+            <div id="Timothee" class="partie fiche_synthese">
+                <% include timothee.ejs %>
+            </div>
+            <div id="Sebastien" class="partie fiche_synthese">
+                <% include sebastien.ejs %>
+            </div>
+            <div id="Quentin" class="partie fiche_synthese">
+                <% include quentin.ejs %>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <% include ../jointures/footer.ejs %>
+    <script type="text/javascript">
+      function select_synthese(synthese)
+      {
+          document.getElementById('Timothee').className = 'partie fiche_synthese';
+          document.getElementById('Sebastien').className = 'partie fiche_synthese';
+          document.getElementById('Quentin').className = 'partie fiche_synthese';
+
+          document.getElementById(synthese).className += ' fiche_synthese_active';
+          document.title = 'Synthèse de ' + synthese;
+      }
+    </script>
+
+</body>
+</html>
