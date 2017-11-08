@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y apt-utils dialog openssh-client curl gi
   curl -sL https://deb.nodesource.com/setup_8.x | bash - &&\
   apt-get install -y nodejs build-essential
 
-RUN npm i -g pm2
+RUN npm i -g npm && npm i -g pm2
 
 ADD ./app /app
 
