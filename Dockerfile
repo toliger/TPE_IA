@@ -1,4 +1,4 @@
-FROM ubuntu
+lsFROM ubuntu
 
 LABEL maintainer="Oliger Timothee"
 
@@ -10,6 +10,6 @@ RUN npm i -g npm && npm i -g pm2
 
 ADD ./app /app
 
-ENTRYPOINT pm2 start /app/app.js && while true; do sleep 1000; done
+ENTRYPOINT cd /app && pm2 start app.js && while true; do sleep 1000; done
 
 EXPOSE  8080
