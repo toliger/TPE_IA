@@ -1,4 +1,4 @@
-lsFROM ubuntu
+FROM ubuntu
 
 LABEL maintainer="Oliger Timothee"
 
