@@ -18,5 +18,8 @@ module.exports = function(app, passport) {
       res.render('Synthese/synthese.ejs');
   }).get('/Bibliographie', (req, res) => {
       res.render('Bibliographie/bibliographie.ejs');
+  }).get('/googlec0b1a061dd34c66c.html ', (req, res) => {
+      res.render('google/index.ejs');
   });
+
 };
